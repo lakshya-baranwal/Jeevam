@@ -36,6 +36,8 @@ pinned: false
 
 **[→ Try the live demo](https://huggingface.co/spaces/penguinxorzero/jeevam)**
 
+**[→ Watch the video](https://youtu.be/PFoD_XWtRPM?si=LoTilX4HY5BRy5FU)**
+
 <br/>
 
 </div>
