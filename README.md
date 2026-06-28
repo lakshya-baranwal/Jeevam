@@ -1,4 +1,14 @@
-# ⌁ Jeevam
+---
+title: Jeevam
+sdk: gradio
+sdk_version: 5.0.0
+emoji: 🌿
+colorFrom: green
+colorTo: yellow
+pinned: false
+---
+
+# 🌿 Jeevam (जीवाम)
 
 ### Voice-Based Natural Farming Consultant for Indian Smallholders
 
