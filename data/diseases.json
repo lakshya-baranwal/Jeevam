@@ -1,0 +1,263 @@
+[
+  {
+    "keywords": ["safed powder", "white powder", "tamatar", "tomato", "powdery mildew"],
+    "crop": "Tamatar (Tomato)",
+    "problem": "Yeh powdery mildew (safed fungus) hai jo tamatar ki pattiyon par hota hai.",
+    "confirm": "Pattiyon ke upar safed powder jaisa dikhega. Neeche se patti peeli padne lagegi.",
+    "treatment": "1. 1 litre chhaach (buttermilk) lein\n2. 10 litre paani mein milayein\n3. Pattiyon par achhe se spray karein\n4. Har 3 din mein dohraye jab tak theek na ho",
+    "prevention": "Paudhon ke beech 2 haath ki doori rakhein — hawa lagne se fungus nahi aata.",
+    "timing": "Subah 6-8 baje, dhoop nikalne se pehle spray karein."
+  },
+  {
+    "keywords": ["peeli patti", "yellow leaf", "gehu", "wheat", "nitrogen", "piliya"],
+    "crop": "Gehu (Wheat)",
+    "problem": "Gehu ki pattiyon ka peela padna nitrogen ki kami darshata hai.",
+    "confirm": "Purani (neeche wali) pattiyan pehle peeli hoti hain. Nayi pattiyan halki hari rehti hain.",
+    "treatment": "1. 200 litre jeevamruta banayein\n2. 1 acre mein paani ke saath de\n3. 15 din mein dobara dein\n4. Geeli patti par neem ka ark bhi spray karein",
+    "prevention": "Har 15 din mein jeevamruta dete rahein — mitti mein nitrogen banta rahega.",
+    "timing": "Sham 4-6 baje, jab dhoop halki ho."
+  },
+  {
+    "keywords": ["kala dhabba", "black spot", "fungal", "blight", "aalu", "potato"],
+    "crop": "Aalu / Sabziyan",
+    "problem": "Yeh fungal blight hai — kale dhabbe pattiyon par dikhte hain aur fasal ko kharab karte hain.",
+    "confirm": "Pattiyon par gol kale ya bhure dhabbe dikhenge. Geeli hawa mein tezi se failte hain.",
+    "treatment": "1. 1 kilo trichoderma powder lein\n2. 100 litre paani mein ghol lein\n3. Pattiyon par aur mitti mein spray karein\n4. Har hafte dohraye baarish ke mausam mein",
+    "prevention": "Fasal chakra apnayein — ek hi jagah baar baar aalu mat lagayein.",
+    "timing": "Subah 6-8 baje, baarish na ho tab spray karein."
+  },
+  {
+    "keywords": ["keede", "keeda", "insects", "fruit borer", "sundi", "tamatar", "tomato"],
+    "crop": "Tamatar (Tomato)",
+    "problem": "Yeh fruit borer (sundi) hai jo tamatar ke andar ghus kar kharab karta hai.",
+    "confirm": "Tamatar mein chhota ched dikhega. Andar sundi ya uski latth hogi.",
+    "treatment": "1. 5 litre paani mein 1 cup neem ke beej ka powder milayein\n2. Achhe se ghol lein aur chhan lein\n3. Phoolon aur phalo par spray karein\n4. Har 5 din mein dohraye",
+    "prevention": "Tamatar ke saath genda (marigold) lagayein — keede gende ki taraf jayenge.",
+    "timing": "Sham ko 5 baje ke baad spray karein."
+  },
+  {
+    "keywords": ["murjhana", "wilting", "sukhna", "baingan", "brinjal", "fusarium"],
+    "crop": "Baingan (Brinjal)",
+    "problem": "Yeh fusarium wilt hai — paudha achanak murjha jata hai jaise paani nahi mila.",
+    "confirm": "Paudha din mein murjhata hai, raat mein thoda theek lagta hai. Tana kaatein to andar bhura dikhega.",
+    "treatment": "1. 1 kilo trichoderma 50 litre paani mein milayein\n2. Paudhe ki jad ke paas mitti mein dalein\n3. Saath mein jeevamruta bhi dein\n4. 10 din baad phir se karein",
+    "prevention": "Beej bonne se pehle beejamruta se beej upchar zaroor karein.",
+    "timing": "Sham ko 4-5 baje, mitti geeli honi chahiye."
+  },
+  {
+    "keywords": ["cheetiyan", "ant", "ants", "cheenti"],
+    "crop": "Sabhi Faslen",
+    "problem": "Cheetiyan fasal ke paas aati hain kyunki kuch keede meetha ras chhodte hain.",
+    "confirm": "Paudhon ke tane par ya mitti mein bahut cheetiyan dikhengi. Pattiyon par chipchipa ras bhi ho sakta hai.",
+    "treatment": "1. Haldi powder paudhon ke aas paas chhidkein\n2. Neem ka tel 5ml per litre paani mein mila kar spray karein\n3. Paudhe ki jad par rakh (ash) daalein",
+    "prevention": "Khet ke kinare par pudina ya tulsi lagayein — cheetiyan door rehti hain.",
+    "timing": "Subah jaldi ya sham ko lagayein."
+  },
+  {
+    "keywords": ["mahua", "aphid", "aphids", "mahu", "joo", "louse"],
+    "crop": "Sarson / Sabziyan",
+    "problem": "Yeh mahu (aphids) hain — chhote hare ya kale keede jo ras chooste hain.",
+    "confirm": "Pattiyon ke peechhe chhote-chhote keede dikhenge. Pattiyan mud jayengi ya chipchipa lagegi.",
+    "treatment": "1. 1 cup neem ke patte peesein\n2. 5 litre paani mein raat bhar bhigoyein\n3. Subah chhan kar spray karein\n4. 3 din mein dohraye",
+    "prevention": "Paudhon ke beech dhaniya ya sarson lagayein — mahu ke dushman keede aate hain.",
+    "timing": "Subah 7 baje spray karein jab keede sust hote hain."
+  },
+  {
+    "keywords": ["jad sadna", "root rot", "jad galana", "root", "galana"],
+    "crop": "Sabhi Faslen",
+    "problem": "Yeh jad sadna (root rot) hai — zyada paani ya fungus ke kaaran jad gal jaati hai.",
+    "confirm": "Paudha murjha raha hai par mitti geeli hai. Jad nikalein to bhuri-kaali aur gili hogi.",
+    "treatment": "1. Paani dena band karein 3-4 din\n2. Trichoderma 1 kilo per 50 litre paani mein ghol kar jad mein dalein\n3. Mitti mein rakh milayein drainage ke liye",
+    "prevention": "Kyari oonchi banayein taaki paani na ruke. Hamesha achhi drainage rakhein.",
+    "timing": "Dhoop wale din subah karein — mitti sukhe."
+  },
+  {
+    "keywords": ["patta morna", "leaf curl", "curl", "mirchi", "chilli", "virus"],
+    "crop": "Mirchi (Chilli)",
+    "problem": "Mirchi ka patta mudna virus ya safed makhi ke kaaran hota hai.",
+    "confirm": "Naye patte upar ki taraf mud jayenge. Pattiyon par halke peele dhabbe bhi ho sakte hain.",
+    "treatment": "1. Neem tel 5ml + 1 litre paani mein milayein\n2. Thoda sa sabun ka ghol milayein (chipkane ke liye)\n3. Pattiyon ke upar aur neeche dono taraf spray karein\n4. Har 4 din mein dohraye",
+    "prevention": "Safed makhi ke liye peele chipchipe trap (gond wale peele kagaz) lagayein.",
+    "timing": "Subah 6-7 baje jab safed makhi sust hoti hai."
+  },
+  {
+    "keywords": ["tana chhedak", "stem borer", "ganna", "sugarcane", "tana"],
+    "crop": "Ganna (Sugarcane)",
+    "problem": "Tana chhedak (stem borer) ganne ke andar ghus kar khata hai.",
+    "confirm": "Ganne ki naye patti ka giruha sukh jayega (dead heart). Tane mein ched dikhega.",
+    "treatment": "1. Trichogramma ke card khet mein lagayein (8 card per acre)\n2. Prabhavit ganne ko kaat kar jala dein\n3. Neem ki khali jad mein dalein",
+    "prevention": "Ganne ke saath dhaniya ya methi ki intercropping karein.",
+    "timing": "Trichogramma card subah 7-8 baje lagayein."
+  },
+  {
+    "keywords": ["phool girna", "flower drop", "phool", "bahar", "dropping"],
+    "crop": "Mirchi / Tamatar / Baingan",
+    "problem": "Phoolon ka girna garmi, paani ki kami ya poshak tattvon ki kami se hota hai.",
+    "confirm": "Phool aa rahe hain par girte ja rahe hain. Phal nahi ban raha.",
+    "treatment": "1. Panchagavya 3% (30ml per litre paani) spray karein\n2. Jeevamruta jad mein dein\n3. Subah-sham halka paani dein\n4. Mulching karein jad ke paas",
+    "prevention": "Niyamit roop se panchagavya spray karte rahein phool aane ke samay.",
+    "timing": "Subah 6-7 baje spray karein, dhoop mein nahi."
+  },
+  {
+    "keywords": ["safed makhi", "whitefly", "white fly", "makhi"],
+    "crop": "Sabziyan",
+    "problem": "Safed makhi chhota uda hua keeda hai jo patti ka ras choosta hai aur virus failata hai.",
+    "confirm": "Patti hilane par chhoti safed makhiyan udti dikhengi. Pattiyon par chipchipa ras hoga.",
+    "treatment": "1. Peele chipchipe trap lagayein (har 10 kadam par)\n2. Neem tel 5ml per litre paani + thoda sabun ghol spray karein\n3. Har 3 din mein spray dohraye",
+    "prevention": "Khet ke charon taraf genda ya tulsi lagayein.",
+    "timing": "Subah 6-7 baje spray karein."
+  },
+  {
+    "keywords": ["lal keeda", "red mite", "mite", "makdi", "spider"],
+    "crop": "Baingan / Bhindi",
+    "problem": "Lal makdi keeda (red spider mite) patti ka ras choosta hai — pattiyan sukh jaati hain.",
+    "confirm": "Pattiyon ke neeche bahut chhote lal bindu dikhenge. Jala jaisa dhaaga bhi dikh sakta hai.",
+    "treatment": "1. 1 kilo green mirchi peesein\n2. 10 litre paani mein milayein\n3. Chhan kar pattiyon ke neeche spray karein\n4. 4 din mein dohraye",
+    "prevention": "Paani ka spray pattiyon par regular karein — makdi keeda geeli jagah nahi aata.",
+    "timing": "Sham 5 baje ke baad spray karein."
+  },
+  {
+    "keywords": ["dheemi vriddhi", "slow growth", "chhota paudha", "stunted"],
+    "crop": "Sabhi Faslen",
+    "problem": "Paudhe ki dheemi vriddhi mitti mein jeevaanu ya poshak tattvon ki kami se hoti hai.",
+    "confirm": "Paudha umra ke hisaab se chhota hai. Pattiyan halki hari ya peeli hain. Jad kamzor hai.",
+    "treatment": "1. Jeevamruta 200 litre per acre har 15 din\n2. Ghana jeevamruta (solid) jad ke paas rakhein\n3. Panchagavya spray 3% har hafte\n4. Mulching karein organic padaarth se",
+    "prevention": "Mitti mein jeevamruta dena kabhi band na karein — yahi sabse zaroori hai.",
+    "timing": "Sham ko 4-5 baje mitti geeli karke dein."
+  },
+  {
+    "keywords": ["jhulsa", "blight", "aalu", "potato", "late blight", "early blight"],
+    "crop": "Aalu (Potato)",
+    "problem": "Yeh aalu ka jhulsa rog hai — baarish ke mausam mein tezi se failta hai.",
+    "confirm": "Pattiyon ke kinare se bhure-kale dhabbe shuru hote hain. Geeli hawa mein safed fungus bhi dikhe.",
+    "treatment": "1. Trichoderma 1 kilo + 50 litre paani spray karein\n2. Chhaach (buttermilk) 1 litre + 10 litre paani spray\n3. Prabhavit pattiyan tod kar jala dein\n4. Har 5 din mein dohraye",
+    "prevention": "Beejamruta se beej upchaar karein. Paudhon mein hawa ka raasta rakhein.",
+    "timing": "Baarish ruke turant spray karein, subah jaldi."
+  },
+  {
+    "keywords": ["deemal", "termite", "dheemak", "white ant"],
+    "crop": "Ganna / Gehu / Sabhi",
+    "problem": "Dheemak (termite) jad aur tana kha jaata hai — paudha achanak sukh jaata hai.",
+    "confirm": "Paudha sukh gaya hai par rog nahi dikha. Jad ya tane ke paas mitti ka rasta dikhega.",
+    "treatment": "1. Neem ki khali 2 kilo per 100 sq ft mitti mein milayein\n2. Beauveria bassiana powder mitti mein milayein\n3. Khet mein neeli roshni ka trap lagayein raat ko",
+    "prevention": "Kacche gobar ki jagah sadi hui gobar khad hi dalein — kacha gobar dheemak bulate hai.",
+    "timing": "Buwai se pehle mitti mein milayein."
+  },
+  {
+    "keywords": ["dhaan", "rice", "chawal", "blast", "neck blast"],
+    "crop": "Dhaan (Rice)",
+    "problem": "Yeh rice blast fungus hai — dhaan ki baal toot jaati hai ya dhabbe aate hain.",
+    "confirm": "Pattiyon par heere jaisa (diamond shape) dhabba. Baal ke neeche kala nishan — baal toot jaaye.",
+    "treatment": "1. Pseudomonas fluorescens 1 kilo per 100 litre spray\n2. Neem tel 5ml per litre paani spray\n3. Potassium ke liye rakh (wood ash) kheton mein dalein",
+    "prevention": "Beejamruta se beej upchar. Zyada khad na dalein — nitrogen zyada hone se blast hota hai.",
+    "timing": "Subah jaldi jab os sukhne lage tab spray karein."
+  },
+  {
+    "keywords": ["bhura daag", "brown spot", "bhura dhabba", "brown"],
+    "crop": "Dhaan / Gehu",
+    "problem": "Bhure dhabbe pattiyon par fungal infection ka sanket hain.",
+    "confirm": "Gol bhure dhabbe pattiyon par dikhenge jinke aas paas peela gola hoga.",
+    "treatment": "1. Chhaach 1 litre + paani 10 litre spray\n2. Trichoderma 500gm per 50 litre paani spray\n3. Prabhavit pattiyan tod kar hatayein",
+    "prevention": "Fasal chakra apnayein. Mitti ki sehat jeevamruta se banaye rakhein.",
+    "timing": "Subah 7-8 baje dhoop nikalne se pehle."
+  },
+  {
+    "keywords": ["mosaic", "virus", "patti par dhaariya", "streak"],
+    "crop": "Sabziyan / Tamatar",
+    "problem": "Yeh mosaic virus hai — pattiyon par hari-peeli dhaariyaan aati hain.",
+    "confirm": "Patti par hari-peeli rangon ka irregular pattern. Paudha chhota reh jaata hai.",
+    "treatment": "1. Prabhavit paudhe turant ukhad kar jala dein (virus failta hai)\n2. Baaki paudhon par neem tel spray karein (virus failane wale keedon ko rokne ke liye)\n3. Khet mein saaf-safai rakhein",
+    "prevention": "Rogi paudhe ko haath lagakar swasth paudhe ko mat chhuyein. Beejamruta se beej upchar karein.",
+    "timing": "Rogi paudha dikhte hi turant hatayein — deri na karein."
+  },
+  {
+    "keywords": ["phal sadna", "fruit rot", "phal galana", "galna"],
+    "crop": "Tamatar / Mirchi / Sabziyan",
+    "problem": "Phal ka sadna (fruit rot) fungus ya bacteria ke kaaran hota hai — zyada neemi se badhta hai.",
+    "confirm": "Phal par bhura ya kaala geela dhabba jo badhta jaaye. Phal mulayam ho jayega.",
+    "treatment": "1. Sade phal turant tod kar door phenkein (khet se bahar)\n2. Trichoderma spray 500gm per 50 litre paani\n3. Paudhon ke neeche mulching hatayein taaki hawa lage",
+    "prevention": "Phal ko zameen se chhoone na dein — lakdi ki support lagayein.",
+    "timing": "Baarish ke baad turant spray karein."
+  },
+  {
+    "keywords": ["patti khane wala", "caterpillar", "sundi", "larva", "iili"],
+    "crop": "Gobhi / Patta Gobhi / Sabziyan",
+    "problem": "Pattiyan khane wali sundi (caterpillar) fasal ko barbaad kar sakti hai.",
+    "confirm": "Pattiyon mein bade-bade ched. Sundi patti ke peechhe chhipi hogi — haath se bhi dikh sakti hai.",
+    "treatment": "1. Neem beej powder 500gm + 10 litre paani ka ghol spray karein\n2. Haath se sundi chun kar sabun ke paani mein daalein\n3. Chidiya aane dein khet mein (perch lagayein)\n4. Har 4 din mein spray dohraye",
+    "prevention": "Khet mein T-shape lakdi ki perch lagayein — chidiyaan aake sundi khayengi.",
+    "timing": "Sham ko 5 baje ke baad spray karein."
+  },
+  {
+    "keywords": ["uktha", "wilt", "sukhna", "chana", "gram", "arhar"],
+    "crop": "Chana / Arhar (Pulses)",
+    "problem": "Uktha rog (wilt) mein paudha achanak sukh jaata hai — fungus jad par hamla karta hai.",
+    "confirm": "Paudha ek taraf se sukhega. Tana kaatein to andar bhoora ring dikhega.",
+    "treatment": "1. Trichoderma 1 kilo + 50 litre paani jad mein dalein\n2. Neem ki khali mitti mein milayein\n3. Prabhavit paudhe ukhad kar jala dein",
+    "prevention": "3 saal mein ek baar hi chana lagayein ek jagah. Beejamruta se beej zaroor upcharein.",
+    "timing": "Buwai ke samay trichoderma mitti mein milayein."
+  },
+  {
+    "keywords": ["chakbandi", "gandhi bug", "badbu", "rice bug", "dhaan keeda"],
+    "crop": "Dhaan (Rice)",
+    "problem": "Gandhi bug dhaan ke dane ka ras choosta hai — dane khaali reh jaate hain.",
+    "confirm": "Khet mein gandi badbu aayegi. Dane dabaane par khaali ya aadhe bhare milenge.",
+    "treatment": "1. Neem tel 5ml per litre paani spray karein baal aane par\n2. Khet mein raat ko roshni ka trap lagayein\n3. Khet ke aas paas ki ghas saaf rakhein",
+    "prevention": "Khet ke kinare ki ghas samay par kaatein — gandhi bug wahi chhipte hain.",
+    "timing": "Sham ko dhaan ki baal par spray karein."
+  },
+  {
+    "keywords": ["chura", "thrips", "pyaaz", "onion", "lahsun"],
+    "crop": "Pyaaz / Lahsun (Onion/Garlic)",
+    "problem": "Thrips bahut chhote keede hain jo pyaaz ki patti ka ras choose lete hain.",
+    "confirm": "Pattiyon par chandi jaisi dhaariyan dikhengi. Patti sikud jayegi.",
+    "treatment": "1. Green mirchi + lehsun ka paste 100gm\n2. 5 litre paani mein raat bhar bhigoyein\n3. Chhan kar spray karein pattiyon par\n4. Har 4 din mein dohraye",
+    "prevention": "Pyaaz ke saath dhaniya ya gajar lagayein — thrips kam aate hain.",
+    "timing": "Subah 7 baje se pehle spray karein."
+  },
+  {
+    "keywords": ["khokhla", "hollow", "gobhi", "cauliflower", "boron"],
+    "crop": "Phool Gobhi (Cauliflower)",
+    "problem": "Gobhi ka khokhla hona boron ki kami se hota hai.",
+    "confirm": "Gobhi ka tana andar se khokhla hoga. Phool bhoora ya dhabbedar ho sakta hai.",
+    "treatment": "1. Borax powder 1 chamach per 10 litre paani mein ghol kar spray karein\n2. Jeevamruta niyamit roop se dein\n3. Ghana jeevamruta jad ke paas rakhein",
+    "prevention": "Mitti mein organic matter banaye rakhein — jeevamruta boron ki kami door karta hai.",
+    "timing": "Phool banne se pehle spray karein."
+  },
+  {
+    "keywords": ["ukhera", "damping off", "nursery", "gir jana", "seedling"],
+    "crop": "Nursery / Sabhi Faslen",
+    "problem": "Chhote paudhe nursery mein gir kar mar jaate hain — yeh damping off hai.",
+    "confirm": "Tana zameen ke paas patla ho jayega aur paudha gir jayega. Mitti zyada geeli hogi.",
+    "treatment": "1. Paani kam karein — mitti sukhne dein\n2. Trichoderma 500gm + 50 litre paani se mitti drench karein\n3. Rakh (wood ash) mitti ki satah par chhidkein",
+    "prevention": "Nursery ki mitti pehle dhoop mein 2 din sukhayein. Beejamruta se beej upchar karein.",
+    "timing": "Buwai se pehle mitti ka upchar karein."
+  },
+  {
+    "keywords": ["rust", "geru", "geruya", "jang", "gehu rust"],
+    "crop": "Gehu (Wheat)",
+    "problem": "Geruya (rust) ek fungal rog hai — pattiyon par narangi-bhure dane dikhte hain.",
+    "confirm": "Pattiyon par chhoti narangi-lal daane jaisi dhaariyaan dikhengi. Haath lagane par rang lage.",
+    "treatment": "1. Chhaach (buttermilk) 1 litre + 10 litre paani spray karein\n2. Neem tel 5ml per litre paani bhi mila sakte hain\n3. Har 5 din mein dohraye",
+    "prevention": "Rog-mukt beej hi boya karein. Samay par buwai karein — deri se rust zyada hota hai.",
+    "timing": "Subah 7-8 baje dhoop se pehle spray karein."
+  },
+  {
+    "keywords": ["kanda sadan", "bulb rot", "pyaaz sadna", "storage rot"],
+    "crop": "Pyaaz (Onion)",
+    "problem": "Pyaaz ka sadna storage mein ya khet mein fungus ke kaaran hota hai.",
+    "confirm": "Pyaaz se badbu aayegi. Dabane par mulayam lagega. Kaatne par andar bhoora ya gila dikhega.",
+    "treatment": "1. Sade pyaaz alag kar lein — baakiyon se door\n2. Storage mein hawa ka raasta rakhein\n3. Trichoderma se upchar karein storage se pehle",
+    "prevention": "Pyaaz ko dhoop mein 3-4 din sukhayein storage se pehle. Geeli pyaaz na rakhein.",
+    "timing": "Storage se pehle 3-4 din dhoop mein sukhayein."
+  },
+  {
+    "keywords": ["tikka", "cercospora", "moongfali", "groundnut", "peanut"],
+    "crop": "Moongfali (Groundnut)",
+    "problem": "Tikka rog moongfali ki pattiyon par gol dhabbe dalta hai — fungus se hota hai.",
+    "confirm": "Pattiyon par chhote gol bhure dhabbe jinke aas paas peela gola. Bahut dhabbe honge to patti gir jaayegi.",
+    "treatment": "1. Neem tel 5ml + 1 litre paani spray karein\n2. Trichoderma 500gm + 50 litre paani spray\n3. Prabhavit pattiyan tod dein\n4. Har hafte spray dohraye",
+    "prevention": "Fasal chakra apnayein aur beejamruta se beej upchar karein.",
+    "timing": "Subah 7-8 baje, dhoop se pehle."
+  }
+]

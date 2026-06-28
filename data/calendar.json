@@ -1,0 +1,74 @@
+[
+    {
+        "month": "January (जनवरी)",
+        "season": "Rabi",
+        "crops": ["Gehu (Wheat)", "Chana (Gram)", "Sarson (Mustard)", "Matar (Peas)"],
+        "activities": "Irrigation of Rabi crops, weeding, and protecting from frost (pala)."
+    },
+    {
+        "month": "February (फरवरी)",
+        "season": "Rabi",
+        "crops": ["Ganna (Sugarcane)", "Surajmukhi (Sunflower)"],
+        "activities": "Harvesting early mustard, preparing fields for Zaid (summer) crops."
+    },
+    {
+        "month": "March (मार्च)",
+        "season": "Zaid",
+        "crops": ["Moong", "Urad", "Tarbooz (Watermelon)", "Kharbooza (Muskmelon)", "Bhindi (Okra)"],
+        "activities": "Harvesting wheat and gram. Sowing of summer vegetables."
+    },
+    {
+        "month": "April (अप्रैल)",
+        "season": "Zaid",
+        "crops": ["Lauki (Bottle Gourd)", "Karela (Bitter Gourd)", "Kheera (Cucumber)"],
+        "activities": "Deep summer ploughing to destroy pests. Harvesting late Rabi crops."
+    },
+    {
+        "month": "May (मई)",
+        "season": "Zaid",
+        "crops": ["Dhaan nursery (Rice nursery)"],
+        "activities": "Field preparation for Kharif crops. Green manuring (Dhaincha/Sunhemp) sowing."
+    },
+    {
+        "month": "June (जून)",
+        "season": "Kharif",
+        "crops": ["Dhaan (Rice)", "Makka (Maize)", "Kapas (Cotton)", "Arhar (Pigeon Pea)", "Soyabean"],
+        "activities": "Sowing Kharif crops with onset of monsoon. Transplanting paddy."
+    },
+    {
+        "month": "July (जुलाई)",
+        "season": "Kharif",
+        "crops": ["Bajra (Pearl Millet)", "Jowar (Sorghum)", "Moongfali (Groundnut)"],
+        "activities": "Weeding in Kharif crops. Applying Jeevamruta to growing plants."
+    },
+    {
+        "month": "August (अगस्त)",
+        "season": "Kharif",
+        "crops": ["Tamatar (Tomato)", "Baingan (Brinjal)", "Mirchi (Chilli) nursery"],
+        "activities": "Pest management. Draining excess water from fields."
+    },
+    {
+        "month": "September (सितंबर)",
+        "season": "Kharif",
+        "crops": ["Aloo (Potato) early sowing"],
+        "activities": "Harvesting early Kharif crops like Moong and Urad. Preparing for Rabi."
+    },
+    {
+        "month": "October (अक्टूबर)",
+        "season": "Rabi",
+        "crops": ["Gehu (Wheat)", "Chana (Gram)", "Sarson (Mustard)", "Lahsuniya (Garlic)"],
+        "activities": "Harvesting paddy. Sowing major Rabi crops. Soil moisture conservation."
+    },
+    {
+        "month": "November (नवंबर)",
+        "season": "Rabi",
+        "crops": ["Pyaaz (Onion)", "Gajar (Carrot)", "Mooli (Radish)", "Palak (Spinach)"],
+        "activities": "Irrigation of newly sown Rabi crops. Weeding."
+    },
+    {
+        "month": "December (दिसंबर)",
+        "season": "Rabi",
+        "crops": ["Jeera (Cumin)", "Dhaniya (Coriander)"],
+        "activities": "Protecting crops from extreme cold/frost using light irrigation and smoke."
+    }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "Jeevam — Natural Farming Consultant",
+  "short_name": "Jeevam",
+  "description": "Voice-based organic farming advisor for Indian smallholder farmers. Works offline.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#2D6A4F",
+  "orientation": "portrait",
+  "lang": "hi",
+  "icons": [
+    {
+      "src": "/static/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

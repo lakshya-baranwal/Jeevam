@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Jeevam — Voice-based natural farming consultant for Indian smallholder farmers. Speak your crop problem, hear organic remedies.">
+    <meta name="theme-color" content="#2D6A4F">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/icon-192.png">
+    <link rel="apple-touch-icon" href="/static/icon-192.png">
+    <title>Jeevam</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- ━━━ Splash Screen ━━━ -->
+<div id="splash" class="splash">
+    <div class="splash-content">
+        <div class="splash-icon">⌁</div>
+        <h1 class="splash-title">Jeevam</h1>
+        <p class="splash-sub">Natural Farming Consultant</p>
+        <div class="splash-loader"><span></span></div>
+    </div>
+</div>
+
+<!-- ━━━ App Shell ━━━ -->
+<div id="app">
+
+    <!-- ═══ PAGE: Home ═══ -->
+    <section id="page-home" class="page active">
+        <header class="page-header home-header">
+            <div class="header-brand">
+                <span class="brand-icon">⌁</span>
+                <span class="brand-name">Jeevam</span>
+            </div>
+            <div class="header-lang">
+                <button id="lang-toggle" class="lang-btn" data-lang="hindi">
+                    हिं / En
+                </button>
+            </div>
+        </header>
+
+        <div class="page-content home-content">
+            <!-- Greeting -->
+            <div class="greeting-section">
+                <h1 id="greeting-text" class="greeting-title">नमस्ते!</h1>
+                <p id="greeting-sub" class="greeting-sub">आज मैं कैसे मदद कर सकता हूँ?</p>
+            </div>
+
+            <!-- Hero Card -->
+            <div class="hero-card" onclick="navigateTo('voice')">
+                <div class="hero-icon-wrap">
+                    <div class="hero-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h2>किसान मित्र से बात करें</h2>
+                    <p>Talk to Kisan Mitra</p>
+                    <span class="hero-desc">अपनी फसल की समस्या बोलें - जवाब सुनें</span>
+                </div>
+                <span class="hero-arrow">›</span>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section-label">Quick Actions</div>
+            <div class="quick-actions">
+                <div class="action-card" onclick="navigateTo('voice')">
+                    <div class="action-icon" style="background: var(--accent-light);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        </svg>
+                    </div>
+                    <span class="action-title">बात करें</span>
+                    <span class="action-sub">Voice Chat</span>
+                </div>
+
+                <div class="action-card" onclick="navigateTo('diseases')">
+                    <div class="action-icon" style="background: #FDE8E8;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <span class="action-title">रोग पहचान</span>
+                    <span class="action-sub">Disease ID</span>
+                </div>
+
+                <div class="action-card" onclick="navigateTo('knowledge')">
+                    <div class="action-icon" style="background: #E8F4FD;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2980B9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <span class="action-title">खेती गाइड</span>
+                    <span class="action-sub">Farming Guide</span>
+                </div>
+
+                <div class="action-card" onclick="navigateTo('help')">
+                    <div class="action-icon" style="background: #FEF3E2;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <span class="action-title">हेल्पलाइन</span>
+                    <span class="action-sub">Emergency</span>
+                </div>
+
+                <div class="action-card" onclick="navigateTo('calendar')">
+                    <div class="action-icon" style="background: #E8F5E9;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <span class="action-title">फसल चक्र</span>
+                    <span class="action-sub">Calendar</span>
+                </div>
+
+                <div class="action-card" onclick="document.getElementById('settings-modal').classList.remove('hidden')">
+                    <div class="action-icon" style="background: #F1F5F9;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <span class="action-title">प्रोफाइल</span>
+                    <span class="action-sub">My Farm</span>
+                </div>
+            </div>
+
+            <!-- Info Banner -->
+            <div class="info-banner">
+                <span class="info-icon">⌁</span>
+                <div>
+                    <strong>100% Organic Only</strong>
+                    <p>कभी भी रासायनिक कीटनाशक की सलाह नहीं देते</p>
+                    <span>कभी भी रासायनिक कीटनाशक की सलाह नहीं देते</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━ VOICE PAGE ━━━ -->
+    <section id="page-voice" class="page">
+        <!-- Chat Area -->
+        <div class="chat-area" id="chat-area">
+            <div class="chat-welcome">
+                <div class="welcome-icon">⌁</div>
+                <h3>मैं आपकी क्या मदद कर सकता हूँ?</h3>
+                <p>बीमारी का नाम या लक्षण बताएं (जैसे: 'टमाटर में कीड़ा लग गया है')</p>
+            </div>
+        </div>
+
+        <!-- Voice Controls -->
+        <div class="voice-controls">
+            <div class="status-text" id="voice-status"></div>
+            
+            <button class="mic-button" id="mic-btn" onclick="toggleRecording()">
+                <svg id="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+                <svg id="stop-icon" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="6" y="6" width="12" height="12"></rect>
+                </svg>
+            </button>
+            <div class="mic-hint" id="mic-hint">बोलें अपनी समस्या बताएं</div>
+            
+            <!-- Fallback Text Input -->
+            <div class="text-input-row">
+                <input type="text" id="text-input" placeholder="या अपनी समस्या यहाँ लिखें..." onkeypress="if(event.key==='Enter') sendText()">
+                <button class="send-button" onclick="sendText()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━ DISEASES LIBRARY ━━━ -->
+    <section id="page-diseases" class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <h2>रोग पहचान</h2>
+                <p>फसलों की आम बीमारियां और उनके जैविक उपचार</p>
+            </div>
+            
+            <div class="search-bar">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" placeholder="फसल या रोग का नाम खोजें..." onkeyup="filterDiseases(this.value)">
+            </div>
+
+            <div class="list-container" id="disease-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━ KNOWLEDGE LIBRARY ━━━ -->
+    <section id="page-knowledge" class="page">
+        <header class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">←</button>
+            <span class="page-title">खेती गाइड</span>
+            <span class="page-title-sub">Farming Guide</span>
+        </header>
+
+        <div class="page-content list-content">
+            <div class="search-bar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input id="knowledge-search" type="text" placeholder="Search techniques..." oninput="filterKnowledge(this.value)">
+            </div>
+            <div id="knowledge-list" class="card-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━ CROP CALENDAR ━━━ -->
+    <section id="page-calendar" class="page">
+        <header class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">←</button>
+            <span class="page-title">फसल चक्र</span>
+            <span class="page-title-sub">Crop Calendar</span>
+        </header>
+
+        <div class="page-content list-content">
+            <div class="search-bar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input id="calendar-search" type="text" placeholder="Search month or crop..." oninput="filterCalendar(this.value)">
+            </div>
+            <div id="calendar-list" class="card-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PAGE: Help ═══ -->
+    <section id="page-help" class="page">
+        <header class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">←</button>
+            <span class="page-title">मदद</span>
+            <span class="page-title-sub">Help & Emergency</span>
+        </header>
+
+        <div class="page-content help-content">
+            <!-- Emergency Card -->
+            <div class="emergency-card">
+                <div class="emergency-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <h2>Kisan Helpline</h2>
+                <p class="emergency-number">1800-180-1551</p>
+                <p class="emergency-sub">Toll Free · 24 घंटे · 7 दिन</p>
+                <a href="tel:18001801551" class="call-btn">☏ Call Now</a>
+            </div>
+
+            <!-- About Section -->
+            <div class="help-section">
+                <h3>Jeevam के बारे में</h3>
+                <div class="help-card">
+                    <p>Jeevam एक AI-powered natural farming consultant है जो भारत के किसानों को organic खेती में मदद करता है।</p>
+                    <ul>
+                        <li>◈ 100% Organic — कभी भी chemical की सलाह नहीं</li>
+                        <li>◈ Voice-first — बोलें, सुनें, पढ़ने की ज़रूरत नहीं</li>
+                        <li>◈ Offline mode — बिना internet भी बुनियादी जवाब</li>
+                        <li>◈ Multilingual — कई भाषाओं में</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <h3>Other Resources</h3>
+                <div class="help-links">
+                    <a href="https://naturalfarming.dac.gov.in/" target="_blank" class="help-link-card">
+                        <span>🌿</span>
+                        <div>
+                            <strong>Natural Farming Portal</strong>
+                            <p>Government of India</p>
+                        </div>
+                        <span class="link-arrow">›</span>
+                    </a>
+                    <a href="https://www.connectingdreamsfoundation.org/" target="_blank" class="help-link-card">
+                        <span>◈</span>
+                        <div>
+                            <strong>Connecting Dreams Foundation</strong>
+                            <p>AI for Rural Entrepreneurs</p>
+                        </div>
+                        <span class="link-arrow">›</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <h3>अन्य हेल्पलाइन</h3>
+                <div class="help-links">
+                    <a href="tel:14447" class="help-link-card">
+                        <span>☏</span>
+                        <div>
+                            <strong>PM Kisan Helpline</strong>
+                            <p>14447</p>
+                        </div>
+                        <span class="link-arrow">›</span>
+                    </a>
+                    <a href="tel:18001801551" class="help-link-card">
+                        <span>☏</span>
+                        <div>
+                            <strong>Kisan Call Centre</strong>
+                            <p>1800-180-1551</p>
+                        </div>
+                        <span class="link-arrow">›</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ BOTTOM NAVIGATION ═══ -->
+    <nav id="bottom-nav" class="bottom-nav">
+        <button class="nav-item active" data-page="home" onclick="navigateTo('home')">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            <span>होम</span>
+        </button>
+        <button class="nav-item" data-page="knowledge" onclick="navigateTo('knowledge')">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            <span>गाइड</span>
+        </button>
+        <button class="nav-item nav-center" data-page="voice" onclick="navigateTo('voice')">
+            <div class="nav-center-btn">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <line x1="12" y1="19" x2="12" y2="23"/>
+                </svg>
+            </div>
+            <span>बात करें</span>
+        </button>
+        <button class="nav-item" data-page="diseases" onclick="navigateTo('diseases')">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>रोग</span>
+        </button>
+        <button class="nav-item" data-page="calendar" onclick="navigateTo('calendar')">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span>चक्र</span>
+        </button>
+    </nav>
+
+    <!-- Detail Modal (for disease/education details) -->
+    <div id="detail-modal" class="detail-modal hidden">
+        <header class="page-header">
+            <button class="back-btn" onclick="closeDetail()">←</button>
+            <span id="detail-title" class="page-title"></span>
+        </header>
+        <div id="detail-body" class="page-content detail-body"></div>
+        <div class="detail-actions">
+            <button class="detail-ask-btn" onclick="askAboutDetail()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+                इसके बारे में और पूछें
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- ━━━ SETTINGS / MY FARM MODAL ━━━ -->
+<div id="settings-modal" class="detail-modal hidden" style="z-index: 10000; background: var(--bg); display: flex; flex-direction: column;">
+    <header class="page-header">
+        <button class="back-btn" onclick="document.getElementById('settings-modal').classList.add('hidden')">←</button>
+        <span class="page-title">My Farm (मेरी खेती)</span>
+    </header>
+    <div class="page-content detail-body" style="padding: 20px;">
+        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:20px;">अपनी खेती की जानकारी दें ताकि Kisan Mitra आपको सटीक सलाह दे सके।</p>
+        
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; font-size:12px; font-weight:600; margin-bottom:5px;">खेत का आकार (Farm Size)</label>
+            <select id="profile-size" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:8px; font-size:14px; background: white; appearance: none;">
+                <option value="">चुनें...</option>
+                <option value="1 एकड़ से कम">1 एकड़ से कम</option>
+                <option value="1 से 2 एकड़">1 से 2 एकड़</option>
+                <option value="2 एकड़ से ज्यादा">2 एकड़ से ज्यादा</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; font-size:12px; font-weight:600; margin-bottom:5px;">मुख्य फसलें (Primary Crops)</label>
+            <input type="text" id="profile-crops" placeholder="जैसे: गेहूं, टमाटर, कपास..." style="width:100%; padding:12px; border:1px solid var(--border); border-radius:8px; font-size:14px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 25px;">
+            <label style="display:block; font-size:12px; font-weight:600; margin-bottom:5px;">राज्य (State/Region)</label>
+            <input type="text" id="profile-region" placeholder="जैसे: उत्तर प्रदेश, महाराष्ट्र..." style="width:100%; padding:12px; border:1px solid var(--border); border-radius:8px; font-size:14px; box-sizing: border-box;">
+        </div>
+
+        <button onclick="saveProfile()" style="width:100%; padding:14px; background:var(--accent); color:white; border:none; border-radius:8px; font-weight:600; font-size: 15px; cursor:pointer;">सेव करें (Save)</button>
+    </div>
+</div>
+
+<!-- Hidden audio player for TTS -->
+<audio id="tts-player" style="display:none;"></audio>
+
+<script src="/static/js/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/static/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>
