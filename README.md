@@ -1,3 +1,12 @@
+---
+title: Jeevam
+sdk: gradio
+sdk_version: 5.0.0
+emoji: 🌿
+colorFrom: green
+colorTo: yellow
+pinned: false
+---
 # 🌿 Jeevam (जीवम)
 <div align="center">
 
