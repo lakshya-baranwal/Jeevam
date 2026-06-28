@@ -34,7 +34,7 @@ pinned: false
 
 <br/>
 
-**[→ Try the live demo](https://huggingface.co)**
+**[→ Try the live demo](https://huggingface.co/spaces/penguinxorzero/jeevam)**
 
 <br/>
 
