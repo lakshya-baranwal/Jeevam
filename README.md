@@ -76,46 +76,22 @@ Farmer taps once → speaks crop problem in Hindi or English (We can add regiona
                            ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                      TRANSCRIBE                                 │
-│  faster-whisper (CPU, offline-capable)                          │
-│  → Hindi / English / Hinglish auto-detected                     │
+│            offline-capable whisper model                        │
+│      → Hindi / English / Hinglish auto-detected                 │
 └──────────────────────────┬──────────────────────────────────────┘
-                Show Diff
-🌿 Jeevam (जीवम)
-
-     ██╗███████╗███████╗██╗   ██╗ █████╗ ███╗   ███╗
-     ██║██╔════╝██╔════╝██║   ██║██╔══██╗████╗ ████║
-     ██║█████╗  █████╗  ██║   ██║███████║██╔████╔██║
-██   ██║██╔══╝  ██╔══╝  ╚██╗ ██╔╝██╔══██║██║╚██╔╝██║
-╚█████╔╝███████╗███████╗ ╚████╔╝ ██║  ██║██║ ╚═╝ ██║
- ╚════╝ ╚══════╝╚══════╝  ╚═══╝  ╚═╝  ╚═╝╚═╝     ╚═╝
-
-जीवाम · Voice-Based Natural Farming Consultant for Indian Smallholders
-
-Hugging Face Python Gradio License
-
-    10,000+ Indian farmers died by suicide in 2023. Crop disease and pest attacks are among the top triggers. Farmers transitioning to natural farming have no organic expert available at 6am in the field. Jeevam is.
-
-
-→ Try the live demo
-
-The Problem
-
-A semi-literate farmer stands in a monsoon field with 2G internet. It is 6am. His tomato leaves have turned yellow overnight. His loan repayment is next month.
-
-To           │
+                           │
                            ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                      DIAGNOSE                                   │
-│                     organic-only system prompt                  │
-│  → Problem confirmed  → Organic treatment  → Prevention         │
-│  OR → Offline cache if LLM unreachable (keyword match)          │
+│    → Problem confirmed  → Organic treatment  → Prevention       │
+│    OR → Offline cache if LLM unreachable (keyword match)        │
 └──────────────────────────┬──────────────────────────────────────┘
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                      SPEAK BACK                                 │
-│  gTTS — farmer hears the answer                                 │
-│  → Household quantities  → Farmer's vocabulary  → No jargon     │
+│           with gTTS, farmer hears the answer                    │
+│     → Household quantities  → Farmer's vocabulary  → No jargon  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
