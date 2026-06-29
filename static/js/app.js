@@ -66,7 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── data-nav: all navigation triggers ──
     document.addEventListener('click', (e) => {
         const el = e.target.closest('[data-nav]');
-        if (el) navigateTo(el.dataset.nav);
+        if (el) {
+            const target = el.dataset.nav;
+            // If already on voice page and clicking nav mic → toggle recording
+            if (target === 'voice' && state.currentPage === 'voice') {
+                toggleRecording();
+            } else {
+                navigateTo(target);
+            }
+        }
     });
 
     // ── Detail modal close ──
