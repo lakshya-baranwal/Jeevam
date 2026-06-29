@@ -33,10 +33,64 @@ document.addEventListener('DOMContentLoaded', () => {
     checkStatus();
     loadChatHistory();
 
-    // Language toggle
-    document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
+    // ── Language toggle ──
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) langToggle.addEventListener('click', toggleLanguage);
 
-    // Handle hash routing
+    // ── Mic button ──
+    const micBtn = document.getElementById('mic-btn');
+    if (micBtn) micBtn.addEventListener('click', toggleRecording);
+
+    // ── Send button ──
+    const sendBtn = document.getElementById('send-btn');
+    if (sendBtn) sendBtn.addEventListener('click', sendText);
+
+    // ── Text input Enter key ──
+    const textInput = document.getElementById('text-input');
+    if (textInput) {
+        textInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendText();
+        });
+    }
+
+    // ── Search inputs ──
+    const diseaseSearch = document.getElementById('disease-search');
+    if (diseaseSearch) diseaseSearch.addEventListener('input', (e) => filterDiseases(e.target.value));
+
+    const knowledgeSearch = document.getElementById('knowledge-search');
+    if (knowledgeSearch) knowledgeSearch.addEventListener('input', (e) => filterKnowledge(e.target.value));
+
+    const calendarSearch = document.getElementById('calendar-search');
+    if (calendarSearch) calendarSearch.addEventListener('input', (e) => filterCalendar(e.target.value));
+
+    // ── data-nav: all navigation triggers ──
+    document.addEventListener('click', (e) => {
+        const el = e.target.closest('[data-nav]');
+        if (el) navigateTo(el.dataset.nav);
+    });
+
+    // ── Detail modal close ──
+    const detailClose = document.getElementById('detail-close');
+    if (detailClose) detailClose.addEventListener('click', closeDetail);
+
+    const detailAskBtn = document.getElementById('detail-ask-btn');
+    if (detailAskBtn) detailAskBtn.addEventListener('click', askAboutDetail);
+
+    // ── Settings modal open/close ──
+    const openSettings = document.getElementById('open-settings');
+    if (openSettings) openSettings.addEventListener('click', () => {
+        document.getElementById('settings-modal').classList.remove('hidden');
+    });
+
+    const settingsClose = document.getElementById('settings-close');
+    if (settingsClose) settingsClose.addEventListener('click', () => {
+        document.getElementById('settings-modal').classList.add('hidden');
+    });
+
+    const saveProfileBtn = document.getElementById('save-profile-btn');
+    if (saveProfileBtn) saveProfileBtn.addEventListener('click', saveProfile);
+
+    // ── Hash routing ──
     window.addEventListener('hashchange', () => {
         const page = location.hash.replace('#', '') || 'home';
         navigateTo(page, false);
@@ -57,9 +111,12 @@ function loadProfile() {
         const saved = localStorage.getItem('jeevam_profile');
         if (saved) {
             state.profile = JSON.parse(saved);
-            document.getElementById('profile-size').value = state.profile.size || '';
-            document.getElementById('profile-crops').value = state.profile.crops || '';
-            document.getElementById('profile-region').value = state.profile.region || '';
+            const sizeEl = document.getElementById('profile-size');
+            const cropsEl = document.getElementById('profile-crops');
+            const regionEl = document.getElementById('profile-region');
+            if (sizeEl) sizeEl.value = state.profile.size || '';
+            if (cropsEl) cropsEl.value = state.profile.crops || '';
+            if (regionEl) regionEl.value = state.profile.region || '';
         }
     } catch(e) {}
 }
@@ -71,16 +128,15 @@ function saveProfile() {
         region: document.getElementById('profile-region').value,
     };
     localStorage.setItem('jeevam_profile', JSON.stringify(state.profile));
-    
     document.getElementById('settings-modal').classList.add('hidden');
     showToast('Profile saved!');
 }
 
 function getProfileContext() {
-    let ctx = [];
-    if (state.profile.size) ctx.append(`Farm Size: ${state.profile.size}`);
-    if (state.profile.crops) ctx.append(`Primary Crops: ${state.profile.crops}`);
-    if (state.profile.region) ctx.append(`Region: ${state.profile.region}`);
+    const ctx = [];
+    if (state.profile.size)   ctx.push(`Farm Size: ${state.profile.size}`);
+    if (state.profile.crops)  ctx.push(`Primary Crops: ${state.profile.crops}`);
+    if (state.profile.region) ctx.push(`Region: ${state.profile.region}`);
     return ctx.join(', ');
 }
 
@@ -99,22 +155,18 @@ function showToast(message) {
 
 // ━━━ Navigation ━━━
 function navigateTo(page, pushHash = true) {
-    // Hide all pages
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 
-    // Show target page
     const target = document.getElementById(`page-${page}`);
     if (target) {
         target.classList.add('active');
         state.currentPage = page;
     }
 
-    // Update bottom nav
     document.querySelectorAll('.nav-item').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.page === page);
     });
 
-    // Update hash
     if (pushHash) location.hash = page;
 }
 
@@ -122,8 +174,10 @@ function navigateTo(page, pushHash = true) {
 function toggleLanguage() {
     state.language = state.language === 'hindi' ? 'english' : 'hindi';
     const btn = document.getElementById('lang-toggle');
-    btn.textContent = state.language === 'hindi' ? 'हिं / En' : 'En / हिं';
-    btn.dataset.lang = state.language;
+    if (btn) {
+        btn.textContent = state.language === 'hindi' ? 'हिं / En' : 'En / हिं';
+        btn.dataset.lang = state.language;
+    }
     updateGreeting();
 }
 
@@ -147,11 +201,11 @@ function updateGreeting() {
     const subEl = document.getElementById('greeting-sub');
 
     if (state.language === 'hindi') {
-        titleEl.textContent = greetHi;
-        subEl.textContent = 'आज मैं कैसे मदद कर सकता हूँ?';
+        if (titleEl) titleEl.textContent = greetHi;
+        if (subEl) subEl.textContent = 'आज मैं कैसे मदद कर सकता हूँ?';
     } else {
-        titleEl.textContent = greetEn;
-        subEl.textContent = 'How can I help you today?';
+        if (titleEl) titleEl.textContent = greetEn;
+        if (subEl) subEl.textContent = 'How can I help you today?';
     }
 }
 
@@ -159,13 +213,12 @@ function updateGreeting() {
 async function checkStatus() {
     try {
         const res = await fetch('/api/status');
-        const data = await res.json();
-        /* Silently check, no persistent badge in new UI */
+        await res.json();
     } catch {}
 }
 
 // ━━━ Voice Recording ━━━
-async function toggleRecording() {
+function toggleRecording() {
     if (state.recording) {
         stopRecording();
     } else {
@@ -196,19 +249,25 @@ async function startRecording() {
         state.mediaRecorder.start();
         state.recording = true;
 
-        // UI updates
         const micBtn = document.getElementById('mic-btn');
-        micBtn.classList.add('recording');
-        document.getElementById('mic-icon').classList.add('hidden');
-        document.getElementById('stop-icon').classList.remove('hidden');
-        document.getElementById('mic-hint').textContent = 'सुन रहा हूँ...';
-        document.getElementById('voice-status').innerHTML =
-            '<div class="waveform"><span></span><span></span><span></span><span></span><span></span></div>';
+        if (micBtn) micBtn.classList.add('recording');
+
+        const micIcon = document.getElementById('mic-icon');
+        if (micIcon) micIcon.classList.add('hidden');
+
+        const stopIcon = document.getElementById('stop-icon');
+        if (stopIcon) stopIcon.classList.remove('hidden');
+
+        const micHint = document.getElementById('mic-hint');
+        if (micHint) micHint.textContent = 'सुन रहा हूँ...';
+
+        const vs = document.getElementById('voice-status');
+        if (vs) vs.innerHTML = '<div class="waveform"><span></span><span></span><span></span><span></span><span></span></div>';
 
     } catch (err) {
         console.error('Mic access denied:', err);
-        document.getElementById('voice-status').textContent =
-            'Microphone access denied — please allow mic permission';
+        const vs = document.getElementById('voice-status');
+        if (vs) vs.textContent = 'Microphone access denied — please allow mic permission';
     }
 }
 
@@ -217,25 +276,31 @@ function stopRecording() {
         state.mediaRecorder.stop();
         state.recording = false;
 
-        // UI reset
         const micBtn = document.getElementById('mic-btn');
-        micBtn.classList.remove('recording');
-        document.getElementById('mic-icon').classList.remove('hidden');
-        document.getElementById('stop-icon').classList.add('hidden');
-        document.getElementById('mic-hint').textContent = 'बोलें — अपनी समस्या बताएं';
-        document.getElementById('voice-status').textContent = 'सोच रहा हूँ...';
+        if (micBtn) micBtn.classList.remove('recording');
+
+        const micIcon = document.getElementById('mic-icon');
+        if (micIcon) micIcon.classList.remove('hidden');
+
+        const stopIcon = document.getElementById('stop-icon');
+        if (stopIcon) stopIcon.classList.add('hidden');
+
+        const micHint = document.getElementById('mic-hint');
+        if (micHint) micHint.textContent = 'बोलें अपनी समस्या बताएं';
+
+        const vs = document.getElementById('voice-status');
+        if (vs) vs.textContent = 'सोच रहा हूँ...';
     }
 }
 
 // ━━━ API: Send Voice ━━━
 async function sendVoice(blob) {
     const chatArea = document.getElementById('chat-area');
+    if (!chatArea) return;
 
-    // Remove welcome message
     const welcome = chatArea.querySelector('.chat-welcome');
     if (welcome) welcome.remove();
 
-    // Show loading
     const loadingEl = createLoadingBubble();
     chatArea.appendChild(loadingEl);
     chatArea.scrollTop = chatArea.scrollHeight;
@@ -252,30 +317,25 @@ async function sendVoice(blob) {
         loadingEl.remove();
 
         if (data.success) {
-            // User bubble (transcript)
             if (data.transcript) {
                 chatArea.appendChild(createBubble(data.transcript, 'user'));
                 saveChatMessage(data.transcript, 'user');
             }
-            // Bot bubble (answer)
             chatArea.appendChild(createBubble(data.answer, 'bot', data.audio_url, !data.online));
             saveChatMessage(data.answer, 'bot', data.audio_url);
-
-            // Auto-play audio
             if (data.audio_url) playAudio(data.audio_url);
-
         } else {
             chatArea.appendChild(createBubble(data.error || 'कुछ गड़बड़ हुई', 'bot'));
         }
 
-        document.getElementById('voice-status').textContent = '';
+        const vs = document.getElementById('voice-status');
+        if (vs) vs.textContent = '';
 
     } catch (err) {
         loadingEl.remove();
-        chatArea.appendChild(createBubble(
-            'Network error — कृपया फिर से कोशिश करें', 'bot'
-        ));
-        document.getElementById('voice-status').textContent = '';
+        chatArea.appendChild(createBubble('Network error — कृपया फिर से कोशिश करें', 'bot'));
+        const vs = document.getElementById('voice-status');
+        if (vs) vs.textContent = '';
     }
 
     chatArea.scrollTop = chatArea.scrollHeight;
@@ -284,21 +344,20 @@ async function sendVoice(blob) {
 // ━━━ API: Send Text ━━━
 async function sendText() {
     const input = document.getElementById('text-input');
+    if (!input) return;
     const query = input.value.trim();
     if (!query) return;
 
     input.value = '';
     const chatArea = document.getElementById('chat-area');
+    if (!chatArea) return;
 
-    // Remove welcome
     const welcome = chatArea.querySelector('.chat-welcome');
     if (welcome) welcome.remove();
 
-    // User bubble
     chatArea.appendChild(createBubble(query, 'user'));
     saveChatMessage(query, 'user');
 
-    // Loading
     const loadingEl = createLoadingBubble();
     chatArea.appendChild(loadingEl);
     chatArea.scrollTop = chatArea.scrollHeight;
@@ -323,9 +382,7 @@ async function sendText() {
         }
     } catch {
         loadingEl.remove();
-        chatArea.appendChild(createBubble(
-            'Network error — कृपया फिर से कोशिश करें', 'bot'
-        ));
+        chatArea.appendChild(createBubble('Network error — कृपया फिर से कोशिश करें', 'bot'));
     }
 
     chatArea.scrollTop = chatArea.scrollHeight;
@@ -333,7 +390,6 @@ async function sendText() {
 
 // ━━━ Chat Bubble Helpers ━━━
 function formatBotResponse(text) {
-    // Parse structured ◈ sections into rich HTML
     const lines = text.split('\n');
     let html = '';
     let currentSection = null;
@@ -357,7 +413,6 @@ function formatBotResponse(text) {
         const trimmed = line.trim();
         if (!trimmed) continue;
 
-        // Offline warning line
         if (trimmed.startsWith('⚠') && !hasOfflineBadge) {
             flushSection();
             html += `<div class="bubble-offline-badge">⚠ Offline Mode</div>`;
@@ -366,16 +421,15 @@ function formatBotResponse(text) {
             continue;
         }
 
-        // Section header: ◈ Title
         if (trimmed.startsWith('◈')) {
             flushSection();
             currentSection = trimmed;
             continue;
         }
 
-        // Encouragement line (last line often)
         if ((trimmed.includes('Himmat rakhein') || trimmed.includes('theek ho jayega') ||
-             trimmed.includes('natural farming mein') || trimmed.includes('nirash na hon')) && lines.indexOf(line) > lines.length - 3) {
+             trimmed.includes('natural farming mein') || trimmed.includes('nirash na hon')) &&
+             lines.indexOf(line) > lines.length - 3) {
             flushSection();
             html += `<div class="bubble-encouragement">${trimmed}</div>`;
             continue;
@@ -393,15 +447,12 @@ function createBubble(text, type, audioUrl, isOffline) {
     div.className = `chat-bubble ${type}`;
 
     if (type === 'bot') {
-        // Rich formatted rendering for bot messages
-        const formatted = formatBotResponse(text);
-        div.innerHTML = formatted;
-
+        div.innerHTML = formatBotResponse(text);
         if (audioUrl) {
             const listenBtn = document.createElement('button');
             listenBtn.className = 'bubble-listen';
             listenBtn.innerHTML = '🔊 सुनें';
-            listenBtn.onclick = () => playAudio(audioUrl);
+            listenBtn.addEventListener('click', () => playAudio(audioUrl));
             div.appendChild(listenBtn);
         }
     } else {
@@ -420,18 +471,19 @@ function createLoadingBubble() {
 
 function playAudio(url) {
     const player = document.getElementById('tts-player');
-    player.src = url;
-    player.play().catch(() => {});
+    if (player) {
+        player.src = url;
+        player.play().catch(() => {});
+    }
 }
 
 // ━━━ Chat Persistence ━━━
 function saveChatMessage(text, type, audioUrl) {
     state.chatHistory.push({ text, type, audioUrl, ts: Date.now() });
-    // Keep last 50 messages
     if (state.chatHistory.length > 50) state.chatHistory.shift();
     try {
         localStorage.setItem('jeevam_chat', JSON.stringify(state.chatHistory));
-    } catch { /* localStorage full — silently fail */ }
+    } catch { }
 }
 
 function loadChatHistory() {
@@ -442,6 +494,7 @@ function loadChatHistory() {
         if (!state.chatHistory.length) return;
 
         const chatArea = document.getElementById('chat-area');
+        if (!chatArea) return;
         const welcome = chatArea.querySelector('.chat-welcome');
         if (welcome) welcome.remove();
 
@@ -449,9 +502,12 @@ function loadChatHistory() {
             chatArea.appendChild(createBubble(msg.text, msg.type, msg.audioUrl));
         });
 
-        // Scroll to bottom
         setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 100);
-    } catch { /* corrupted data — ignore */ }
+    } catch {
+        // Corrupted localStorage — clear it and start fresh
+        localStorage.removeItem('jeevam_chat');
+        state.chatHistory = [];
+    }
 }
 
 // ━━━ Load Data ━━━
@@ -477,7 +533,7 @@ async function loadData() {
 // ━━━ Render Disease List ━━━
 function renderDiseases(items) {
     const list = document.getElementById('disease-list');
-    if(!list) return;
+    if (!list) return;
     list.innerHTML = '';
 
     const cropIcons = {
@@ -498,10 +554,9 @@ function renderDiseases(items) {
         return;
     }
 
-    items.forEach((item, idx) => {
+    items.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'list-card';
-        card.onclick = () => showDiseaseDetail(state.diseases.indexOf(item));
 
         const cropName = item.crop.toLowerCase();
         let icon = '🌿';
@@ -517,6 +572,7 @@ function renderDiseases(items) {
             </div>
             <span class="list-card-arrow">›</span>
         `;
+        card.addEventListener('click', () => showDiseaseDetail(state.diseases.indexOf(item)));
         list.appendChild(card);
     });
 }
@@ -524,7 +580,7 @@ function renderDiseases(items) {
 // ━━━ Render Knowledge List ━━━
 function renderKnowledge(items) {
     const list = document.getElementById('knowledge-list');
-    if(!list) return;
+    if (!list) return;
     list.innerHTML = '';
 
     if (items.length === 0) {
@@ -532,11 +588,9 @@ function renderKnowledge(items) {
         return;
     }
 
-    items.forEach((item, idx) => {
+    items.forEach((item) => {
         const card = document.createElement('div');
         card.className = 'list-card';
-        card.onclick = () => showEducationDetail(state.education.indexOf(item));
-
         card.innerHTML = `
             <div class="list-card-icon" style="background: var(--info-bg);">◈</div>
             <div class="list-card-text">
@@ -545,6 +599,7 @@ function renderKnowledge(items) {
             </div>
             <span class="list-card-arrow">›</span>
         `;
+        card.addEventListener('click', () => showEducationDetail(state.education.indexOf(item)));
         list.appendChild(card);
     });
 }
@@ -552,7 +607,7 @@ function renderKnowledge(items) {
 // ━━━ Render Calendar List ━━━
 function renderCalendar(items) {
     const list = document.getElementById('calendar-list');
-    if(!list) return;
+    if (!list) return;
     list.innerHTML = '';
 
     if (items.length === 0) {
@@ -564,7 +619,7 @@ function renderCalendar(items) {
         const card = document.createElement('div');
         card.className = 'list-card';
         card.style.cursor = 'default';
-        
+
         const seasonColor = item.season === 'Kharif' ? '#4CAF50' : item.season === 'Rabi' ? '#FF9800' : '#2196F3';
 
         card.innerHTML = `
@@ -625,20 +680,15 @@ function showDiseaseDetail(idx) {
     document.getElementById('detail-body').innerHTML = `
         <h3>◈ Samasya (Problem)</h3>
         <p>${item.problem}</p>
-
         <h3>◈ Pehchan (How to confirm)</h3>
         <p>${item.confirm}</p>
-
         <h3>◈ Ilaj (Treatment)</h3>
         <p>${item.treatment.replace(/\n/g, '<br>')}</p>
-
         <h3>◈ Bachav (Prevention)</h3>
         <p>${item.prevention}</p>
-
         <h3>◈ Kab lagayen (When to apply)</h3>
         <p>${item.timing}</p>
     `;
-
     document.getElementById('detail-modal').classList.remove('hidden');
 }
 
@@ -651,20 +701,15 @@ function showEducationDetail(idx) {
     document.getElementById('detail-body').innerHTML = `
         <h3>◈ Kya hai (What it is)</h3>
         <p>${item.what}</p>
-
         <h3>◈ Kya chahiye (Ingredients)</h3>
         <p>${item.ingredients.replace(/\n/g, '<br>')}</p>
-
         <h3>◈ Kaise banaye (How to make)</h3>
         <p>${item.steps.replace(/\n/g, '<br>')}</p>
-
         <h3>◈ Kitne din mein tayar (Ready in)</h3>
         <p>${item.ready_in}</p>
-
         <h3>◈ Kaise use karein (How to use)</h3>
         <p>${item.usage.replace(/\n/g, '<br>')}</p>
     `;
-
     document.getElementById('detail-modal').classList.remove('hidden');
 }
 
@@ -683,9 +728,11 @@ function askAboutDetail() {
     closeDetail();
     navigateTo('voice');
 
-    // Auto-fill text input with the query
     setTimeout(() => {
-        document.getElementById('text-input').value = query;
-        sendText();
+        const input = document.getElementById('text-input');
+        if (input) {
+            input.value = query;
+            sendText();
+        }
     }, 300);
 }

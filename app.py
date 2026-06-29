@@ -154,8 +154,7 @@ async def api_calendar():
 @app.get("/api/status")
 async def api_status():
     """Health check."""
-    has_key = bool(os.getenv("GEMINI_API_KEY", "").strip()
-                   and os.getenv("GEMINI_API_KEY") != "your_gemini_api_key_here")
+    has_key = bool(os.getenv("GROQ_API_KEY", "").strip())
     return JSONResponse({"status": "ok", "llm_configured": has_key})
 
 

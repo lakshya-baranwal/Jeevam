@@ -55,7 +55,7 @@
             </div>
 
             <!-- Hero Card -->
-            <div class="hero-card" onclick="navigateTo('voice')">
+            <div class="hero-card" data-nav="voice">
                 <div class="hero-icon-wrap">
                     <div class="hero-icon">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -77,7 +77,7 @@
             <!-- Quick Actions -->
             <div class="section-label">Quick Actions</div>
             <div class="quick-actions">
-                <div class="action-card" onclick="navigateTo('voice')">
+                <div class="action-card" data-nav="voice">
                     <div class="action-icon" style="background: var(--accent-light);">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
@@ -88,7 +88,7 @@
                     <span class="action-sub">Voice Chat</span>
                 </div>
 
-                <div class="action-card" onclick="navigateTo('diseases')">
+                <div class="action-card" data-nav="diseases">
                     <div class="action-icon" style="background: #FDE8E8;">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -98,7 +98,7 @@
                     <span class="action-sub">Disease ID</span>
                 </div>
 
-                <div class="action-card" onclick="navigateTo('knowledge')">
+                <div class="action-card" data-nav="knowledge">
                     <div class="action-icon" style="background: #E8F4FD;">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2980B9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
@@ -109,7 +109,7 @@
                     <span class="action-sub">Farming Guide</span>
                 </div>
 
-                <div class="action-card" onclick="navigateTo('help')">
+                <div class="action-card" data-nav="help">
                     <div class="action-icon" style="background: #FEF3E2;">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -119,7 +119,7 @@
                     <span class="action-sub">Emergency</span>
                 </div>
 
-                <div class="action-card" onclick="navigateTo('calendar')">
+                <div class="action-card" data-nav="calendar">
                     <div class="action-icon" style="background: #E8F5E9;">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -132,7 +132,7 @@
                     <span class="action-sub">Calendar</span>
                 </div>
 
-                <div class="action-card" onclick="document.getElementById('settings-modal').classList.remove('hidden')">
+                <div class="action-card" id="open-settings">
                     <div class="action-icon" style="background: #F1F5F9;">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="3"/>
@@ -163,15 +163,15 @@
             <div class="chat-welcome">
                 <div class="welcome-icon">⌁</div>
                 <h3>मैं आपकी क्या मदद कर सकता हूँ?</h3>
-                <p>बीमारी का नाम या लक्षण बताएं (जैसे: 'टमाटर में कीड़ा लग गया है')</p>
+                <p>बीमारी का नाम या लक्षण बताएं (जैसे: 'टमाटर में कीड़ा लग गया है')</p>
             </div>
         </div>
 
         <!-- Voice Controls -->
         <div class="voice-controls">
             <div class="status-text" id="voice-status"></div>
-            
-            <button class="mic-button" id="mic-btn" onclick="toggleRecording()">
+
+            <button class="mic-button" id="mic-btn">
                 <svg id="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
                     <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
@@ -183,11 +183,11 @@
                 </svg>
             </button>
             <div class="mic-hint" id="mic-hint">बोलें अपनी समस्या बताएं</div>
-            
+
             <!-- Fallback Text Input -->
             <div class="text-input-row">
-                <input type="text" id="text-input" placeholder="या अपनी समस्या यहाँ लिखें..." onkeypress="if(event.key==='Enter') sendText()">
-                <button class="send-button" onclick="sendText()">
+                <input type="text" id="text-input" placeholder="या अपनी समस्या यहाँ लिखें...">
+                <button class="send-button" id="send-btn">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="22" y1="2" x2="11" y2="13"></line>
                         <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -204,25 +204,23 @@
                 <h2>रोग पहचान</h2>
                 <p>फसलों की आम बीमारियां और उनके जैविक उपचार</p>
             </div>
-            
+
             <div class="search-bar">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <input type="text" placeholder="फसल या रोग का नाम खोजें..." onkeyup="filterDiseases(this.value)">
+                <input type="text" id="disease-search" placeholder="फसल या रोग का नाम खोजें...">
             </div>
 
-            <div class="list-container" id="disease-list">
-                <!-- Populated by JS -->
-            </div>
+            <div class="list-container" id="disease-list"></div>
         </div>
     </section>
 
     <!-- ━━━ KNOWLEDGE LIBRARY ━━━ -->
     <section id="page-knowledge" class="page">
         <header class="page-header">
-            <button class="back-btn" onclick="navigateTo('home')">←</button>
+            <button class="back-btn" data-nav="home">←</button>
             <span class="page-title">खेती गाइड</span>
             <span class="page-title-sub">Farming Guide</span>
         </header>
@@ -230,18 +228,16 @@
         <div class="page-content list-content">
             <div class="search-bar">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input id="knowledge-search" type="text" placeholder="Search techniques..." oninput="filterKnowledge(this.value)">
+                <input id="knowledge-search" type="text" placeholder="Search techniques...">
             </div>
-            <div id="knowledge-list" class="card-list">
-                <!-- Populated by JS -->
-            </div>
+            <div id="knowledge-list" class="card-list"></div>
         </div>
     </section>
 
     <!-- ━━━ CROP CALENDAR ━━━ -->
     <section id="page-calendar" class="page">
         <header class="page-header">
-            <button class="back-btn" onclick="navigateTo('home')">←</button>
+            <button class="back-btn" data-nav="home">←</button>
             <span class="page-title">फसल चक्र</span>
             <span class="page-title-sub">Crop Calendar</span>
         </header>
@@ -249,24 +245,21 @@
         <div class="page-content list-content">
             <div class="search-bar">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input id="calendar-search" type="text" placeholder="Search month or crop..." oninput="filterCalendar(this.value)">
+                <input id="calendar-search" type="text" placeholder="Search month or crop...">
             </div>
-            <div id="calendar-list" class="card-list">
-                <!-- Populated by JS -->
-            </div>
+            <div id="calendar-list" class="card-list"></div>
         </div>
     </section>
 
     <!-- ═══ PAGE: Help ═══ -->
     <section id="page-help" class="page">
         <header class="page-header">
-            <button class="back-btn" onclick="navigateTo('home')">←</button>
+            <button class="back-btn" data-nav="home">←</button>
             <span class="page-title">मदद</span>
             <span class="page-title-sub">Help & Emergency</span>
         </header>
 
         <div class="page-content help-content">
-            <!-- Emergency Card -->
             <div class="emergency-card">
                 <div class="emergency-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -279,7 +272,6 @@
                 <a href="tel:18001801551" class="call-btn">☏ Call Now</a>
             </div>
 
-            <!-- About Section -->
             <div class="help-section">
                 <h3>Jeevam के बारे में</h3>
                 <div class="help-card">
@@ -298,18 +290,12 @@
                 <div class="help-links">
                     <a href="https://naturalfarming.dac.gov.in/" target="_blank" class="help-link-card">
                         <span>🌿</span>
-                        <div>
-                            <strong>Natural Farming Portal</strong>
-                            <p>Government of India</p>
-                        </div>
+                        <div><strong>Natural Farming Portal</strong><p>Government of India</p></div>
                         <span class="link-arrow">›</span>
                     </a>
                     <a href="https://www.connectingdreamsfoundation.org/" target="_blank" class="help-link-card">
                         <span>◈</span>
-                        <div>
-                            <strong>Connecting Dreams Foundation</strong>
-                            <p>AI for Rural Entrepreneurs</p>
-                        </div>
+                        <div><strong>Connecting Dreams Foundation</strong><p>AI for Rural Entrepreneurs</p></div>
                         <span class="link-arrow">›</span>
                     </a>
                 </div>
@@ -320,18 +306,12 @@
                 <div class="help-links">
                     <a href="tel:14447" class="help-link-card">
                         <span>☏</span>
-                        <div>
-                            <strong>PM Kisan Helpline</strong>
-                            <p>14447</p>
-                        </div>
+                        <div><strong>PM Kisan Helpline</strong><p>14447</p></div>
                         <span class="link-arrow">›</span>
                     </a>
                     <a href="tel:18001801551" class="help-link-card">
                         <span>☏</span>
-                        <div>
-                            <strong>Kisan Call Centre</strong>
-                            <p>1800-180-1551</p>
-                        </div>
+                        <div><strong>Kisan Call Centre</strong><p>1800-180-1551</p></div>
                         <span class="link-arrow">›</span>
                     </a>
                 </div>
@@ -341,21 +321,21 @@
 
     <!-- ═══ BOTTOM NAVIGATION ═══ -->
     <nav id="bottom-nav" class="bottom-nav">
-        <button class="nav-item active" data-page="home" onclick="navigateTo('home')">
+        <button class="nav-item active" data-page="home" data-nav="home">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
             <span>होम</span>
         </button>
-        <button class="nav-item" data-page="knowledge" onclick="navigateTo('knowledge')">
+        <button class="nav-item" data-page="knowledge" data-nav="knowledge">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
             </svg>
             <span>गाइड</span>
         </button>
-        <button class="nav-item nav-center" data-page="voice" onclick="navigateTo('voice')">
+        <button class="nav-item nav-center" data-page="voice" data-nav="voice">
             <div class="nav-center-btn">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
@@ -365,13 +345,13 @@
             </div>
             <span>बात करें</span>
         </button>
-        <button class="nav-item" data-page="diseases" onclick="navigateTo('diseases')">
+        <button class="nav-item" data-page="diseases" data-nav="diseases">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
             <span>रोग</span>
         </button>
-        <button class="nav-item" data-page="calendar" onclick="navigateTo('calendar')">
+        <button class="nav-item" data-page="calendar" data-nav="calendar">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                 <line x1="16" y1="2" x2="16" y2="6"/>
@@ -382,16 +362,19 @@
         </button>
     </nav>
 
-    <!-- Detail Modal (for disease/education details) -->
+    <!-- Detail Modal -->
     <div id="detail-modal" class="detail-modal hidden">
         <header class="page-header">
-            <button class="back-btn" onclick="closeDetail()">←</button>
+            <button class="back-btn" id="detail-close">←</button>
             <span id="detail-title" class="page-title"></span>
         </header>
         <div id="detail-body" class="page-content detail-body"></div>
         <div class="detail-actions">
-            <button class="detail-ask-btn" onclick="askAboutDetail()">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+            <button class="detail-ask-btn" id="detail-ask-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                </svg>
                 इसके बारे में और पूछें
             </button>
         </div>
@@ -402,12 +385,12 @@
 <!-- ━━━ SETTINGS / MY FARM MODAL ━━━ -->
 <div id="settings-modal" class="detail-modal hidden" style="z-index: 10000; background: var(--bg); display: flex; flex-direction: column;">
     <header class="page-header">
-        <button class="back-btn" onclick="document.getElementById('settings-modal').classList.add('hidden')">←</button>
+        <button class="back-btn" id="settings-close">←</button>
         <span class="page-title">My Farm (मेरी खेती)</span>
     </header>
     <div class="page-content detail-body" style="padding: 20px;">
         <p style="font-size:13px; color:var(--text-secondary); margin-bottom:20px;">अपनी खेती की जानकारी दें ताकि Kisan Mitra आपको सटीक सलाह दे सके।</p>
-        
+
         <div style="margin-bottom: 15px;">
             <label style="display:block; font-size:12px; font-weight:600; margin-bottom:5px;">खेत का आकार (Farm Size)</label>
             <select id="profile-size" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:8px; font-size:14px; background: white; appearance: none;">
@@ -428,7 +411,7 @@
             <input type="text" id="profile-region" placeholder="जैसे: उत्तर प्रदेश, महाराष्ट्र..." style="width:100%; padding:12px; border:1px solid var(--border); border-radius:8px; font-size:14px; box-sizing: border-box;">
         </div>
 
-        <button onclick="saveProfile()" style="width:100%; padding:14px; background:var(--accent); color:white; border:none; border-radius:8px; font-weight:600; font-size: 15px; cursor:pointer;">सेव करें (Save)</button>
+        <button id="save-profile-btn" style="width:100%; padding:14px; background:var(--accent); color:white; border:none; border-radius:8px; font-weight:600; font-size: 15px; cursor:pointer;">सेव करें (Save)</button>
     </div>
 </div>
 

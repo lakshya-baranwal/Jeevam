@@ -4,3 +4,6 @@ __pycache__/
 .env
 audio_cache/
 .DS_Store
+
+.venv/
+dummy.webm
