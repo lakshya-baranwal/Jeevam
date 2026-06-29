@@ -24,7 +24,7 @@ pinned: false
 [![Hugging Face](https://img.shields.io/badge/Live%20Demo-Hugging%20Face%20Spaces-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co)
 [![Python](https://img.shields.io/badge/Python-3.10+-111110?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Gradio](https://img.shields.io/badge/Gradio-5.0.0-F97316?style=for-the-badge)](https://gradio.app)
-[![License](https://img.shields.io/badge/Built%20for-Connecting%20Dreams%20Foundation-2D6A4F?style=for-the-badge)](https://huggingface.co)
+[![License](https://img.shields.io/badge/Built%20for-Connecting%20Dreams%20Foundation-2D6A4F?style=for-the-badge)](https://connecting-dreams.org/)
 
 <br/>
 
