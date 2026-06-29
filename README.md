@@ -56,6 +56,11 @@ Today, he calls a relative, waits for a government helpline, or — worse — bu
 
 ## In Action
 
+| | |
+|:---:|:---:|
+| ![Step 1](images/jeevam1.png) | ![Step 2](images/jeevam2.png) |
+| ![Step 3](images/jeevam3.png) | ![Step 4](images/jeevam4.png) |
+
 ```
 Farmer taps once → speaks crop problem in Hindi or English (We can add regional languages as well)
 → Organic remedy in 15 seconds → Works even if internet drops halfway
